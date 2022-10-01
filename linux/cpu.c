@@ -2,9 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-
-
-
 double GetReportedMaxClockSpeed() {
     
     FILE *maxspeed = popen("cat /proc/cpuinfo | grep \"MHz\" | cut -d\":\" -f2", "r");
@@ -28,10 +25,4 @@ double GetReportedMaxClockSpeed() {
 
     
     pclose(maxspeed);
-}
-
-
-int main() {
-    GetReportedMaxClockSpeed();
-    return 0;
 }
